@@ -1,0 +1,58 @@
+<body>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<app-not-found [visible]="!wine"
+notFoundMessage="Wine Not Found"
+resetLinkText="Back To Homepage">
+</app-not-found>
+
+<div class="test">
+<div *ngIf ="wine" class="container">
+  <img [src]="wine.imageUrl" [alt]="wine.name"/>
+
+  <div class="details">
+    <div class="header">
+      <span class="name">
+        {{wine.name}}
+      </span>
+      <span class="favorite {{wine.favourite? '' : 'not'}}">
+        <span class="material-icons">
+          favorite
+          </span>
+      </span>
+    </div>
+    <div class="kind">
+      <span>
+          {{wine.kind}}
+      </span>
+    </div>
+    <div class="stars">
+      <star-rating
+      [value]="wine.stars"
+      [totalstars]="5"
+      checkedcolor="red"
+      uncheckedcolor="black"
+      size="22px"
+      [readonly]="true">
+    </star-rating>
+    </div>
+    <div class="tags">
+      <a *ngFor="let tag of wine.tags" routerLink="/tag/{{tag}}">
+        {{tag}}
+      </a>
+    </div>
+    <div class="description">
+      <span>
+        {{wine.description }}
+      </span>
+    </div>
+    <div class="price">
+      <span>
+        {{wine.price |  currency }}
+      </span>
+    </div>
+    <button (click)="addToCart()">Add To Cart</button>
+  </div>
+</div>
+</div>
+</body>

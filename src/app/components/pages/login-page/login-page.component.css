@@ -1,0 +1,36 @@
+body{
+  background: linear-gradient(90deg, rgba(62,81,81,1) 49%, rgba(222,203,164,1) 100%);
+  min-height: 100vh;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  }
+
+  .details{
+    width: 28rem;
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .error-list{
+    color: red;
+  }
+
+  .register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  a{
+    color:white
+  }
